@@ -3,7 +3,10 @@ const numberKm = parseInt(prompt("Quanti km devi fare?"));
 
 /*Richiesta età del passeggero */
 const age = parseInt(prompt("Quanti anni hai?"));
-
+if (isNaN(numberKm) || (isNaN(age))){
+document.getElementById("price").innerHTML = "Non è stato possibile calcolare importo biglietto, indica età e km in numero";
+}
+else{
 /* Tariffa fissa biglietto in base a Km */
 const priceKm = 0.21;
 /*Calcolo totale senza sconti*/
@@ -25,4 +28,5 @@ else if (age > 65){
 }
 else {
     document.getElementById("price").innerHTML ="Il totale biglietto è " + Math.round(totPrice)+"€"
+}
 }
